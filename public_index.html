@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KHQNZUR DATA SOLUTION</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <h1>KHQNZUR DATA SOLUTION</h1>
+        <p>Automated Services</p>
+      </div>
+
+      <div class="top-cta">
+        <span class="label">TILL - 54 17 120</span>
+        <button class="admin-link" id="adminOpenBtn">Admin</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="before-title">Pata Hata Ukiwa na Okoa!</p>
+        <h2>BINGWA DATA DEALS</h2>
+        <ul class="feature-list">
+          <li>Buy multiple times a day</li>
+          <li>Fast and reliable internet bundles</li>
+          <li>Easy purchase via STK payment</li>
+        </ul>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-header">BINGWA DEALS</div>
+        <div class="hero-card-body">
+          <p>Daily, Weekly, Monthly & Night bundles available</p>
+          <p class="price-line">From KSh 20</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="category-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="daily">Daily</button>
+      <button class="filter-btn" data-filter="weekly">Weekly</button>
+      <button class="filter-btn" data-filter="monthly">Monthly</button>
+      <button class="filter-btn" data-filter="night">Night</button>
+    </nav>
+
+    <main class="bundle-section">
+      <div class="section-title">
+        <h3>Bundle offers</h3>
+      </div>
+      <div id="bundleGrid" class="bundle-grid"></div>
+    </main>
+
+    <footer class="footer">
+      <p>Tell a friend to tell a friend</p>
+      <p>Call us: 0719 000 000</p>
+      <p>© 2026 KHQNZUR DATA SOLUTION</p>
+    </footer>
+  </div>
+
+  <div id="purchaseModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close-btn" id="closePurchaseModal">×</button>
+      <h3>Complete Purchase</h3>
+
+      <div class="purchase-summary">
+        <p><strong>Bundle:</strong> <span id="purchaseBundleName"></span></p>
+        <p><strong>Price:</strong> KSh <span id="purchaseBundlePrice"></span></p>
+        <p><strong>Details:</strong> <span id="purchaseBundleDetails"></span></p>
+      </div>
+
+      <form id="purchaseForm">
+        <label for="phoneInput">Phone Number</label>
+        <input type="tel" id="phoneInput" placeholder="0712345678" required />
+
+        <div class="stk-note">
+          <p>📲 A payment prompt will be sent to your phone.</p>
+          <p>Enter your MPESA PIN to confirm purchase.</p>
+        </div>
+
+        <button type="submit" class="primary-btn">Send STK Push</button>
+      </form>
+
+      <div id="purchaseStatus" class="purchase-status hidden"></div>
+    </div>
+  </div>
+
+  <div id="adminModal" class="modal hidden">
+    <div class="modal-card">
+      <button class="close-btn" id="closeAdminModal">×</button>
+      <h3>Admin Login</h3>
+
+      <form id="adminLoginForm">
+        <label for="adminEmail">Email</label>
+        <input type="email" id="adminEmail" placeholder="kanzu@gmail.com" required />
+
+        <label for="adminPassword">Password</label>
+        <input type="password" id="adminPassword" placeholder="********" required />
+
+        <button type="submit" class="primary-btn">Login</button>
+      </form>
+
+      <p id="adminError" class="error hidden"></p>
+    </div>
+  </div>
+
+  <div id="adminPanel" class="admin-panel hidden">
+    <div class="admin-panel-header">
+      <h3>Admin Price Manager</h3>
+      <button id="logoutAdminBtn" class="secondary-btn">Logout</button>
+    </div>
+
+    <div id="adminPriceList" class="admin-price-list"></div>
+  </div>
+
+  <div id="successModal" class="modal hidden">
+    <div class="modal-card success-box">
+      <button class="close-btn" id="closeSuccessModal">×</button>
+      <div class="success-icon">✓</div>
+      <h3>Payment Successful</h3>
+      <p id="successText">Your bundle has been activated.</p>
+      <button id="closeSuccessBtn" class="primary-btn">Close</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
